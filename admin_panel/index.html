@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin Panel - MaseidTV</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+	<div class="admin-wrap">
+
+		<!-- KURULUM (ilk kullanım) -->
+		<div id="setupView">
+			<h1>İlk Kurulum</h1>
+			<p class="admin-bilgi">Bu bilgiler sadece bu tarayıcıda, belirleyeceğiniz şifreyle şifrelenmiş olarak saklanacak.</p>
+
+			<label for="s-repo">GitHub Depo (kullanici/repo)</label>
+			<input type="text" id="s-repo" placeholder="örn: maseid/maseidtv-website" autocomplete="off">
+
+			<label for="s-branch">Branch</label>
+			<input type="text" id="s-branch" value="main" autocomplete="off">
+
+			<label for="s-token">GitHub Token (PAT)</label>
+			<input type="password" id="s-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+
+			<label for="s-pass1">Panel Şifresi Belirle</label>
+			<input type="password" id="s-pass1" autocomplete="off">
+
+			<label for="s-pass2">Şifreyi Tekrar Yazın</label>
+			<input type="password" id="s-pass2" autocomplete="off">
+
+			<button class="admin-btn" id="setupBtn">Kur ve Devam Et</button>
+			<p class="admin-sonuc" id="setupSonuc"></p>
+		</div>
+
+		<!-- GİRİŞ (normal kullanım) -->
+		<div id="loginView" class="hidden">
+			<h1>Admin Girişi</h1>
+
+			<label for="l-pass">Şifre</label>
+			<input type="password" id="l-pass" autocomplete="off">
+
+			<button class="admin-btn" id="loginBtn">Giriş Yap</button>
+			<p class="admin-sonuc" id="loginSonuc"></p>
+			<span class="admin-link" id="resetLink">Şifreyi unuttum / yeniden kur</span>
+		</div>
+
+		<!-- PANEL (giriş yapıldıktan sonra) -->
+		<div id="panelView" class="hidden">
+			<h1>Yönetim Paneli</h1>
+			<p class="admin-bilgi" id="repoBilgi"></p>
+
+			<div class="panel-sekmeler">
+				<button type="button" class="panel-sekme-btn active" data-sayfa="abone">Abone</button>
+				<button type="button" class="panel-sekme-btn" data-sayfa="duyuru">Duyuru</button>
+				<button type="button" class="panel-sekme-btn" data-sayfa="canli">Canlı Yayın</button>
+				<button type="button" class="panel-sekme-btn" data-sayfa="sonvideo">Son Video</button>
+				<button type="button" class="panel-sekme-btn" data-sayfa="videolar">Videolar</button>
+				<button type="button" class="panel-sekme-btn" data-sayfa="sosyal">Sosyal Medya</button>
+			</div>
+
+			<div class="panel-sayfa" data-sayfa="abone">
+				<div class="panel-bolum">
+					<h2>Abone Sayısı</h2>
+					<label for="abone">Yeni Abone Sayısı</label>
+					<input type="text" id="abone" placeholder="örn: 1250" autocomplete="off">
+					<button class="admin-btn" id="aboneBtn">Güncelle</button>
+					<p class="admin-sonuc" id="aboneSonuc"></p>
+				</div>
+			</div>
+
+			<div class="panel-sayfa hidden" data-sayfa="duyuru">
+				<div class="panel-bolum">
+					<h2>Duyuru</h2>
+					<label for="duyuru">Duyuru Metni</label>
+					<input type="text" id="duyuru" placeholder="örn: Bu hafta yeni video geliyor!" autocomplete="off">
+					<button class="admin-btn" id="duyuruBtn">Güncelle</button>
+					<button class="admin-btn admin-btn-ikincil" id="duyuruKaldirBtn">Duyuruyu Kaldır</button>
+					<p class="admin-sonuc" id="duyuruSonuc"></p>
+				</div>
+			</div>
+
+			<div class="panel-sayfa hidden" data-sayfa="canli">
+				<div class="panel-bolum">
+					<h2>Canlı Yayın</h2>
+					<label for="canli-link">Yayın Linki</label>
+					<input type="text" id="canli-link" placeholder="https://www.youtube.com/watch?v=XXXXXXXXXXX" autocomplete="off">
+					<button class="admin-btn" id="canliBtn">Güncelle</button>
+					<button class="admin-btn admin-btn-ikincil" id="canliKaldirBtn">Yayını Kaldır</button>
+					<p class="admin-sonuc" id="canliSonuc"></p>
+				</div>
+			</div>
+
+			<div class="panel-sayfa hidden" data-sayfa="sonvideo">
+				<div class="panel-bolum">
+					<h2>Son Video</h2>
+					<label for="sonvideo-link">Video Linki</label>
+					<input type="text" id="sonvideo-link" placeholder="https://www.youtube.com/watch?v=XXXXXXXXXXX" autocomplete="off">
+					<label for="sonvideo-baslik">Video Başlığı</label>
+					<input type="text" id="sonvideo-baslik" placeholder="Video başlığı" autocomplete="off">
+					<button class="admin-btn" id="sonVideoBtn">Güncelle</button>
+					<p class="admin-sonuc" id="sonVideoSonuc"></p>
+				</div>
+			</div>
+
+			<div class="panel-sayfa hidden" data-sayfa="videolar">
+				<div class="panel-bolum">
+					<h2>Videolar (Galeri)</h2>
+					<div id="videolarListe"></div>
+					<button class="admin-btn admin-btn-ikincil" id="videoEkleBtn" type="button">+ Link Ekle</button>
+					<button class="admin-btn" id="videolarKaydetBtn">Kaydet</button>
+					<p class="admin-sonuc" id="videolarSonuc"></p>
+				</div>
+			</div>
+
+			<div class="panel-sayfa hidden" data-sayfa="sosyal">
+				<div class="panel-bolum">
+					<h2>Sosyal Medya</h2>
+
+					<label for="sosyal-instagram">İnstagram Linki</label>
+					<input type="text" id="sosyal-instagram" placeholder="https://www.instagram.com/kullaniciadi" autocomplete="off">
+
+					<label for="sosyal-discord">Discord Linki</label>
+					<input type="text" id="sosyal-discord" placeholder="https://discord.gg/xxxxxxx" autocomplete="off">
+
+					<label for="sosyal-tiktok">TikTok Linki</label>
+					<input type="text" id="sosyal-tiktok" placeholder="https://www.tiktok.com/@kullaniciadi" autocomplete="off">
+
+					<label for="sosyal-twitter">X (Twitter) Linki</label>
+					<input type="text" id="sosyal-twitter" placeholder="https://x.com/kullaniciadi" autocomplete="off">
+
+					<label for="sosyal-twitch">Twitch Linki</label>
+					<input type="text" id="sosyal-twitch" placeholder="https://twitch.tv/kullaniciadi" autocomplete="off">
+
+					<p class="admin-bilgi admin-bilgi-ust-bosluklu">Boş bırakılan platformlar footer'da gösterilmez.</p>
+
+					<button class="admin-btn" id="sosyalBtn">Güncelle</button>
+					<p class="admin-sonuc" id="sosyalSonuc"></p>
+				</div>
+			</div>
+
+			<span class="admin-link" id="logoutLink">Çıkış Yap</span>
+		</div>
+
+		<p class="admin-not">
+			Bu sayfa herkese açık GitHub Pages sitenizde yayınlanıyor; linki bilen herkes açabilir. Asıl koruma,
+			doğru şifreyi bilmeden saklı GitHub Token'ın açılamamasından gelir. Bu sayfanın linkini ana menüye
+			eklemeyin, şifrenizi kimseyle paylaşmayın ve token'ınıza yalnızca bu depo için "Contents: Read and write"
+			izni verin.
+		</p>
+	</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

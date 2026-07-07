@@ -1,0 +1,164 @@
+.admin-wrap{
+	max-width: 600px;
+	margin: 80px auto;
+	padding: 30px;
+	background-color: #322e2e;
+	border: ridge 5px;
+	border-color: #635355;
+	box-sizing: border-box;
+}
+.admin-wrap h1{
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 25px;
+}
+.admin-wrap label{
+	display: block;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+.admin-wrap input{
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	background-color: #1c1b1b;
+	color: #FFFFFF;
+	border: ridge 3px;
+	border-color: #635355;
+	border-radius: 5px;
+	box-sizing: border-box;
+	font-family: inherit;
+}
+.admin-btn{
+	margin-top: 20px;
+	width: 100%;
+	padding: 12px;
+	cursor: pointer;
+	font-size: 18px;
+	color: #FFFFFF;
+	border: double 1px;
+	background-color: #1a1a1a;
+	border-color: black;
+}
+.admin-btn:hover{
+	background-color: #646262;
+}
+.admin-sonuc{
+	margin-top: 15px;
+	text-align: center;
+	font-size: 16px;
+	min-height: 20px;
+}
+.admin-not{
+	font-size: 13px;
+	opacity: 0.75;
+	margin-top: 25px;
+	line-height: 1.6;
+}
+.admin-bilgi{
+	font-size: 14px;
+	opacity: 0.8;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.admin-bilgi-ust-bosluklu{
+	margin-top: 10px;
+}
+.admin-link{
+	display: block;
+	text-align: center;
+	margin-top: 15px;
+	font-size: 13px;
+	color: #AAAAAA;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.hidden{
+	display: none;
+}
+.panel-bolum{
+	margin-top: 25px;
+	padding: 18px;
+	background-color: #312c2c;
+	border: ridge 3px;
+	border-color: #635355;
+	border-radius: 5px;
+}
+.panel-bolum h2{
+	margin: 0 0 5px 0;
+	font-size: 18px;
+	text-align: center;
+}
+.admin-btn-ikincil{
+	margin-top: 10px;
+	border: double 1px;
+	background-color: #1a1a1a;
+	border-color: black;
+}
+.admin-btn-ikincil:hover{
+	background-color: #646262;
+}
+.galeri-satir{
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	margin-top: 10px;
+}
+.galeri-satir input{
+	margin-top: 0;
+	background-color: #1c1b1b;
+	color: #FFFFFF;
+	border: ridge 3px;
+	border-color: #635355;
+}
+.galeri-satir input.galeri-link{
+	flex: 1.2;
+}
+.galeri-satir input.galeri-baslik{
+	flex: 1;
+}
+.galeri-sil{
+	flex: 0 0 auto;
+	background-color: #1a1a1a;
+	color: #FFFFFF;
+	border: double 1px;
+	border-color: black;
+	border-radius: 5px;
+	padding: 10px 14px;
+	cursor: pointer;
+	font-size: 16px;
+}
+.galeri-sil:hover{
+	background-color: #970000;
+}
+.panel-sekmeler{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: center;
+	margin-top: 20px;
+	padding-bottom: 15px;
+	border-bottom: ridge 3px #635355;
+}
+.panel-sekme-btn{
+	padding: 8px 14px;
+	font-size: 14px;
+	cursor: pointer;
+	color: #FFFFFF;
+	background-color: #1a1a1a;
+	border: double 1px;
+	border-color: black;
+	border-radius: 5px;
+	font-family: inherit;
+}
+.panel-sekme-btn:hover{
+	background-color: #646262;
+}
+.panel-sekme-btn.active{
+	background-color: #646262;
+	border-color: #FFFFFF;
+}
+.panel-sayfa .panel-bolum{
+	margin-top: 20px;
+}

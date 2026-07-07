@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>İLETİŞİM</title>
+<link rel="stylesheet" href="../style.css">
+<script src="../script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+	<h1 class="iletisim-h1">İLETİŞİM</h1>
+
+	<form id="iletisimForm" class="iletisim-form">
+
+		<!-- Web3Forms Access Key - kendi anahtarınla değiştir -->
+		<input type="hidden" name="access_key" value="e7e7a804-6986-4737-a35f-f9bbde79b977">
+		<input type="hidden" name="subject" value="MaseidTV İletişim Formu - Yeni Mesaj">
+
+		<!-- Spam botlarına karşı, kullanıcı görmez -->
+		<input type="checkbox" name="botcheck" style="display:none;">
+
+		<label for="ad">Adınız</label>
+		<input type="text" id="ad" name="ad" required>
+
+		<label for="soyad">Soyadınız</label>
+		<input type="text" id="soyad" name="soyad" required>
+
+		<label for="eposta">E-posta Adresiniz</label>
+		<input type="email" id="eposta" name="email" required>
+
+		<label for="diger-iletisim">Diğer İletişim Bilgisi (isteğe bağlı)</label>
+		<input type="text" id="diger-iletisim" name="diger_iletisim" placeholder="Telefon, Instagram vb.">
+
+		<label for="mesaj">Mesajınız</label>
+		<textarea id="mesaj" name="message" rows="6" required></textarea>
+
+		<button type="submit" class="iletisim-btn">Gönder</button>
+
+		<p id="iletisimSonuc" class="iletisim-sonuc"></p>
+
+	</form>
+
+</body>
+</html>
