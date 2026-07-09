@@ -233,7 +233,6 @@ align-items: center;
 foter{
 	display: block;
 	width: 100%;
-	background-color: #000000;
 	text-align: center;
 	position: sticky;
 	align-items: center;
@@ -241,8 +240,11 @@ foter{
 
 .foter-p{
 	background-color: #272323;
-	padding: 15px;
+	padding: 20px;
 	font-size: 20px;
+	border-top: 5px double #818181;
+	border-bottom: 5px double #818181;
+	border-radius: 50px;
 }
 
 .foter-a{
@@ -253,10 +255,9 @@ foter{
 	}
 
 .foter-a:hover{	
-	color: #fcfcfc;;
-	border: 5px double #818181;;
-	border-radius: 15%;
-	
+	background-color: #383838;
+	padding:-5px;
+
 	}
 
 /*INSTAGRAM*/
@@ -268,7 +269,7 @@ foter{
 }
 
 .fa-instagram:hover{
-	color:#FF0000;
+	color:#818181;
 
 }
 
