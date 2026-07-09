@@ -300,7 +300,7 @@ a{
 	text-align: center;
 	border-bottom: 10px double #463e3e;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row-reverse;
 	border-radius: 15%;
 }
 
@@ -365,7 +365,13 @@ a{
 	font-size: 20px;
 	border-color: rgb(89, 86, 86);
 	border-radius: 30%;
-	margin: 0px 5px;
+	width: 200px;
+	height: 70px;
+	display: flex;
+	text-align: center;
+	align-items:center;
+	justify-content: center;
+	margin: 0px 5px
 }
 
 .link3{
@@ -377,7 +383,13 @@ a{
 	font-size: 20px;
 	border-color: rgb(79, 77, 77);
 	border-radius: 30%;
-	margin: 0px 5px;
+	width: 200px;
+	height: 70px;
+	display: flex;
+	text-align: center;
+	align-items:center;
+	justify-content: center;
+	margin: 0px 5px
 
 }
 
